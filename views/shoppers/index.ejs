@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
+<!-- <head>
+
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> -->
 
 <head>
-  <title>Sneaker Market Place</title>
-  <!-- Google Icon Fonts used by Materialize -->
+  <title>Sneaker Portal </title>
+  
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="stylesheets/style.css" />
-  <!-- JavaScript for Materialize -->
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
+
 <body>
+  
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="" class="brand-logo left">Sneaker Shopper Ad</a>
+        
         <ul class="right">
           <li>
             <% if (user) { %>
@@ -32,7 +39,7 @@
   </div>
   <div class="container">
     <div id="search-row" class="row">
-      <h2 class="col s4 blue-grey-text text-darken-2">Shoppers</h2>
+      
       <form action="/shoppers" method="GET">
         <div class="col s3 offset-s3">
           <!-- search -->
@@ -59,11 +66,14 @@
         </div>
       </form>
     </div>
+    <h1>Sneaker Portal</h1>
+      <h2>Chicago</h2>
     <div class="row">
       <div id="shoppers" class="col s12">
         <% shoppers.forEach(function(shopper) { %>
           <div class="card blue-grey">
             <div class="card-content white-text">
+              
               <div>
                 <span class="card-title">
                   <% if (shopper.avatar) { %>
@@ -76,12 +86,13 @@
                     <span class="badge white"> <%= shopper.cohort %></span>
                   <% } %> -->
                 </span>
+                
               </div>
               <ul class="collection">
                 <% shopper.ads.forEach(function(ad) { %>
                   <li class="collection-item blue-grey-text text-darken-2">
 
-              
+                   
 
                     <!-- Add delete form - don't forget to install method-override -->
                     <span class="title"><%- ad.text %></span>
@@ -98,7 +109,7 @@
                 <div class="card-action">
                   <form action="/ads" method="POST">
                     <input type="text" name="text" class="white-text">
-                    <button type="submit" class="btn white-text">Post Ad</button>
+                    <button type="submit" class="btn white-text">Post Review</button>
                   </form>
                 </div>
               <% } %>
@@ -110,6 +121,8 @@
       </div>
     </div>
   </div>
+
+
 </body>
 
 </html>
