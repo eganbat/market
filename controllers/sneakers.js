@@ -10,12 +10,16 @@ module.exports = {
 };
 
 function deleteSneaker(req, res){
-    
+   if(req.user){
     Sneaker.findByIdAndDelete(req.params.id).then(function(){
       console.log('sneaker deleted');
       res.redirect('/sneakers')
-    });
-  }
+    }) 
+    } else {
+    res.redirect(`back`)
+    }};
+    
+  
 
 
 function index(req, res) {

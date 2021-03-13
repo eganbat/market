@@ -1,35 +1,23 @@
 <%- include('../partials/header') %>
-    <!-- <h1>Sneaker Portal</h1>
-      <h2>Chicago</h2> -->
-    <div class="row">
-      <div id="shoppers" class="col s12">
-        <% shoppers.forEach(function(shopper) { %>
-          <div class="card blue-grey">
-            <div class="card-content white-text">
-              
-              <div>
-                <span class="card-title">
-                  <% if (shopper.avatar) { %>
-                    <img src="<%= shopper.avatar %>" alt="" class="circle responsive-img">&nbsp;&nbsp;
-                  <% } else { %>
-                    <i class="small material-icons">perm_identity</i>
-                  <% } %>
-                  <span class="shopper-name"><%= shopper.name %></span>
-                  <!-- <% if (shopper.cohort) { %>
-                    <span class="badge white"> <%= shopper.cohort %></span>
-                  <% } %> -->
-                </span>
-                
-              </div>
-              
-         
-             
-            </div>
-          </div>
-        <% }) %>
-      </div>
+    
+  
+    
+<div class="card-title">
+  <% shoppers.forEach(function(shopper) { %>
+    <div>
+        <% if(shopper._id.equals(user && user._id)){ %>
+        <span ><%= shopper.name %></span>
+        
+        <% } else { %>
+        
+        <% } %>           
     </div>
-  </div>
+  <% }) %>
+
+
+</div>
+    
+  
 
 
   <%- include('../partials/footer') %>

@@ -4,6 +4,8 @@
       <tr>
         <th>Title</th>
         <th>Condition</th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -11,21 +13,18 @@
         <tr>
           <td><%= s.title %></td>
           <td><%= s.condition %></td>
-          <td><a href="/sneakers/<%= s._id %>">DETAILS</a></td>
+          <td class="box"><a href="/sneakers/<%= s._id %>">DETAILS</a></td>
           <td>
-            <% if(user && s.owner){ %>
-              <% if(user._id.toString()==s.owner.toString()){ %>
             <form action="/sneakers/<%= s.id %>?_method=DELETE"
               class="delete-form" method="POST">
               <button type="submit">X</button>
             </form>
-            <% } else { %>
-            
-            <% }} %>
-         
           </td> 
         </tr>
         <% }); %>
       </tbody>
     </table>
 <%- include('../partials/footer') %>
+
+
+
