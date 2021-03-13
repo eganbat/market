@@ -23,7 +23,7 @@ require('./config/passport');
 var indexRoutes = require('./routes/index');
 var shoppersRoutes = require('./routes/shoppers');
 var sneakersRoutes = require('./routes/sneakers');
-// var releasesRoutes = require('/routes/releases');
+
 
 
 // view engine setup
@@ -58,7 +58,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRoutes);
 app.use('/', shoppersRoutes);
 app.use('/sneakers', sneakersRoutes);
-// app.use('/', releasesRoutes);
+
 
 // invalid request, send 404 page
 app.use(function(req, res) {

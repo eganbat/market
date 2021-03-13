@@ -6,7 +6,8 @@ module.exports = {
   show,
   new: newSneaker,
   create,
-  delete: deleteSneaker
+  delete: deleteSneaker,
+  release
 };
 
 function deleteSneaker(req, res){
@@ -36,6 +37,9 @@ function index(req, res) {
     });
   }
 
+  function release(req, res) {
+      res.render('sneakers/release', {title: 'Sneaker News' });
+  }
 
   function newSneaker(req, res){
     if(req.user){
