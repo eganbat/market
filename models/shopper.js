@@ -1,19 +1,20 @@
 const mongoose = require('mongoose');
-
+const Schema = mongoose.Schema;
 // Create your User Model
 
-const adSchema = new mongoose.Schema({
-    text: String
-}, {
-    timestamps: true
-});
+// const adSchema = new mongoose.Schema({
+//     text: String
+// }, {
+//     timestamps: true
+// });
 
 const shopperSchema = new mongoose.Schema({
     name: String,
     email: String,
     // cohort: String,
     avatar: String,
-    ads: [adSchema],
+    // ads: [adSchema],
+   
     googleId: String
 }, {
     timestamps: true

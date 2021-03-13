@@ -1,11 +1,18 @@
 var router = require('express').Router();
 const passport = require('passport');
+const express = require('express');
 
 // The root route renders our only view
 router.get('/', function(req, res) {
   // Where do you want to go for the root route
   res.redirect('/shoppers');
 });
+
+router.get('/', function(req, res, next) {
+  // Where do you want to go for the root route
+  res.redirect('/sneakers');
+});
+
 
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
@@ -27,5 +34,7 @@ router.get('/logout', function(req, res){
   req.logout();
   res.redirect('/shoppers');
 });
+
+
 
 module.exports = router;

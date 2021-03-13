@@ -1,73 +1,6 @@
-<!DOCTYPE html>
-<html>
-<!-- <head>
-
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head> -->
-
-<head>
-  <title>Sneaker Portal </title>
-  
-  <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet"> -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head>
-
-
-<body>
-  
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        
-        <ul class="right">
-          <li>
-            <% if (user) { %>
-              <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-            <% } else { %>
-              <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-            <% } %>
-           
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="container">
-    <div id="search-row" class="row">
-      
-      <form action="/shoppers" method="GET">
-        <div class="col s3 offset-s3">
-          <!-- search -->
-          <div class="input-field">
-            <input id="search" type="search" name="name" placeholder="search name" value="<%= name %>" autocomplete="off">
-            <i class="material-icons">close</i>
-          </div>
-        </div>
-        <div class="col s2">
-          <!-- <p>
-            <label for="sort-cohort">
-              <input name="sort" type="radio" id="sort-cohort" value="cohort" class="with-gap"
-                <%= sortKey === 'cohort' ? 'checked' : '' %> >
-              <span>Sort by Cohort</span>
-            </label>
-          </p> -->
-          <p>
-            <label for="sort-name">
-              <input name="sort" type="radio" id="sort-name" value="name" class="with-gap"
-                <%= sortKey === 'name' ? 'checked' : '' %> >
-              <span>Sort by Name</span>
-            </label>
-          </p>
-        </div>
-      </form>
-    </div>
-    <h1>Sneaker Portal</h1>
-      <h2>Chicago</h2>
+<%- include('../partials/header') %>
+    <!-- <h1>Sneaker Portal</h1>
+      <h2>Chicago</h2> -->
     <div class="row">
       <div id="shoppers" class="col s12">
         <% shoppers.forEach(function(shopper) { %>
@@ -88,31 +21,7 @@
                 </span>
                 
               </div>
-              <ul class="collection">
-                <% shopper.ads.forEach(function(ad) { %>
-                  <li class="collection-item blue-grey-text text-darken-2">
-
-                   
-
-                    <!-- Add delete form - don't forget to install method-override -->
-                    <span class="title"><%- ad.text %></span>
-                    <% if (shopper._id.equals(user && user._id)) { %>
-                      <form action="/ads/<%= ad._id %>?_method=DELETE" method="POST" class="secondary-content">
-                        <button type="submit" class="btn-small red-text">X</button>
-                      </form>
-                    <% } %>
-                  </li>
-                <% }) %>
-              </ul>
-
-              <% if (shopper._id.equals(user && user._id)) { %>
-                <div class="card-action">
-                  <form action="/ads" method="POST">
-                    <input type="text" name="text" class="white-text">
-                    <button type="submit" class="btn white-text">Post Review</button>
-                  </form>
-                </div>
-              <% } %>
+              
          
              
             </div>
@@ -123,6 +32,4 @@
   </div>
 
 
-</body>
-
-</html>
+  <%- include('../partials/footer') %>
