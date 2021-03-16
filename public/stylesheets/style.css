@@ -13,6 +13,14 @@ h3 {
   margin: 10px 0 0 0;
 }
 
+h4 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin: 10px 0 0 0;
+}
+
 #new-form {
   display: grid;
   grid-gap: 10px;
@@ -88,24 +96,14 @@ table td {
 }
 
 
-html { 
-  background: url(../images/background.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-body {
-  margin-top: 100px;
-}
-
 .navbar {
   overflow: hidden;
-  background-color: rgb(0, 0, 0, 0.1);
-  position: fixed;
+  background-color: rgb(0, 0, 0, 0.9);
   top: 0;
+  z-index: 100;
+  position: fixed;
   width: 100%;
+ display: inline;
 }
 
 .navbar a {
@@ -123,7 +121,9 @@ body {
   color: black;
 }
 
-.card-title {
+
+
+.card-titlee {
   padding:1em; 
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
@@ -144,7 +144,7 @@ td,th {
 }
 
 thead, tbody {
-  background-color: rgb(45, 13, 187, 0.4);
+  background-color: rgba(108, 99, 145, 0.4);
 }
 
 .box {
@@ -160,8 +160,21 @@ thead, tbody {
 }
 
 #show-page, #new-form {
+  background-color: rgba(108, 99, 145, 0.4);
   margin-top: 50px;
   font-family: 'Amatic SC', cursive;
   font-size: 40px;
   color: rgba(255,255,255, 0.9);
+}
+
+.background {
+  background: url(../images/background.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body{
+  margin-top: 100px;
 }

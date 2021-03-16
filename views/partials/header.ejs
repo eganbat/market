@@ -2,21 +2,25 @@
 
     <html lang="en">
     
-        <head>
-            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
-            <link rel='stylesheet' href='/stylesheets/style.css' />
-            <title><%= title %></title>
-          </head>
+      <head>
+         
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        
+        <title><%= title %></title>
+      </head>
     
-    <body>
+    <body class="background">
       <div class="navbar">
         <nav>
           <div class="nav-wrapper">
                 <a href="/shoppers" >Home</a>
-                <a href="/releases" >Sneaker News</a>
+                <a href="/releases" >Sneaker Release</a>
                 <a href="/sneakers/new" >Sneaker Sell</a>
                 <a href="/sneakers" >Sneaker List</a>
+                <a href="/stocks" >Inventory</a>
             <ul class="right">
               <li>
                 <% if (user) { %>

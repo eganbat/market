@@ -14,6 +14,24 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/releases', function(req, res){
+  res.render('releases', {
+    title: 'Releases'
+  });
+});
+
+router.get('/login', function(req, res){
+  res.render('login', {
+    title: 'login'
+  });
+});
+
+router.get('/stocks', function(req, res){
+  res.render('stocks', {
+    title: 'Stocks'
+  });
+});
+
 // Google OAuth login route
 router.get('/auth/google', passport.authenticate(
   'google',

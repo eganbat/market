@@ -17,11 +17,9 @@ function deleteSneaker(req, res){
       res.redirect('/sneakers')
     }) 
     } else {
-    res.redirect(`back`)
+      res.render('login', {title: 'login'})
     }};
     
-  
-
 
 function index(req, res) {
     Sneaker.find({}, function(err, sneakers) {
@@ -45,7 +43,7 @@ function index(req, res) {
     if(req.user){
       res.render('sneakers/new', {title: 'Add Sneaker'})
     } else {
-      res.redirect(`back`)
+      res.render('login', {title: 'login'})
     }
   }
   
